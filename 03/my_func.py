@@ -1,3 +1,6 @@
+import random
+
+
 def input_int_number(n):
     while True:
         number = input(n)
@@ -18,10 +21,16 @@ def input_float_number():
 
 
 def random_list_with_variables(a, b, n):
-    import random
     return random.sample(range(a, b), n)
+
 
 def random_list(n, a):
     from random import randint
     list = [randint(-a, a) for i in range(n)]
+    return list
+
+
+def random_list_float_numbers(n, a, b, rnd):
+    list = [random.uniform(a, b) for i in range(n)]
+    list = [round(i, rnd) for i in list]
     return list

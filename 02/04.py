@@ -2,7 +2,6 @@
 # Найдите произведение элементов на указанных позициях.
 # Позиции хранятся в файле file.txt в одной строке одно число.
 import my_func
-import random
 
 n = my_func.input_int_number()
 list_rnd = my_func.random_list(-n, n, n)
