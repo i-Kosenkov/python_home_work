@@ -8,17 +8,17 @@ n = my_func.input_int_number()
 list_rnd = my_func.random_list(-n, n, n)
 print('Random list: ', list_rnd)
 
-sum = 0
+sum = 1
 new_list = []
 
 with open('file.txt', 'r') as file:
     for line in file:
-        if int(line) < len(list_rnd):
-            sum += list_rnd[int(line)]
+        if -len(list_rnd) <= int(line) < len(list_rnd):
+            sum *= list_rnd[int(line)]
             new_list.append(list_rnd[int(line)])
 
 print('New list: ', new_list)
-print('Sum new list = ', sum if sum != 0 else 'Значения не найдены')
+print('Sum new list = ', sum if sum != 1 else 'Значения не найдены')
 
 # n = int(input('Количество элементов: '))
 # lst_rnd = random.sample(range(-n, n), n)

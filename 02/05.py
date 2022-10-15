@@ -21,9 +21,7 @@ def my_Random(lst):
     value = round(time.time() * 1000) % 10  # Получаем последнюю цифру из времени в миллисекундах
     for i in range(len(lst)):
         if value < len(lst):  # убеждаемся что значение(миллисекунд) не выползает за границы списка
-            a = lst[i]
-            lst[i] = lst[-value]
-            lst[-value] = a
+            lst[i], lst[-value] = lst[-value], lst[i]
             value = int(((time.time() * 1000) % 1000) // 100 - i)  # для большей рандомности меняем индекс
         else:  # на случай если все же выползем за пределы списка
             value = 0
