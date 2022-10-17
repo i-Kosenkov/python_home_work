@@ -4,7 +4,7 @@ import my_func
 
 n = my_func.input_int_number('Input integer number: ')
 double = str()
-while n > 0:
-    double = double + str(n % 2)
+while n:
+    double = str(n % 2) + double
     n = n // 2
-print('Binary number = ', double[::-1])
+print('Binary number = ', double)
