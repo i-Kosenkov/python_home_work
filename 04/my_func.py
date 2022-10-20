@@ -24,9 +24,9 @@ def random_list_with_variables(a, b, n):
     return random.sample(range(a, b), n)
 
 
-def random_list(n, a):
+def random_list(a, b, n):
     from random import randint
-    list = [randint(-a, a) for i in range(n)]
+    list = [randint(a, b) for i in range(n)]
     return list
 
 
