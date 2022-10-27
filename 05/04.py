@@ -4,27 +4,29 @@ with open('04.txt', 'r') as file:
     text = file.readline()
     print(text)
 
+rle = str()
 count = 1
-rle = []
+
 for i in range(len(text) - 1):
     if text[i] == text[i + 1]:
         count += 1
+        if count == 9:
+            rle += str(count) + text[i]
+            count = 0
     else:
-        rle.append(text[i] + '¬' + str(count))
+        rle += str(count) + text[i]
         count = 1
-rle.append(text[i] + '¬' + str(count))
+rle += str(count) + text[i]
 
-zip_rle = '¡'.join(rle)
-print(zip_rle)
+print(rle)
 
 with open('04-zip.txt', 'w') as zip_file:
-    zip_file.write(zip_rle)
+    zip_file.write(rle)
 
 # Расшифровка zip файла
 with open('04-zip.txt', 'r') as new_file:
     interpretation = str()
-    for item in new_file.readline().split('¡'):
-        part_1, part_2 = item.split('¬')
-        interpretation += (str(part_1) * int(part_2))
-    print(interpretation)
-
+    rle_item = new_file.readline()
+    for i in range(0, len(rle_item) - 1, 2):
+        interpretation += (str(rle_item[i + 1]) * int(rle_item[i]))
+print(interpretation)
