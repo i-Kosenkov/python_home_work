@@ -2,7 +2,7 @@ from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes, MessageHandler, filters
 from commands import *
 
-app = ApplicationBuilder().token("5916296344:AAHaewqB0FGRaMVqqdyqrttMc88Tea1RqMU").build()
+app = ApplicationBuilder().token("telegram-key").build()
 
 app.add_handler(CommandHandler("start", start))
 app.add_handler(CommandHandler("hello", hello))
